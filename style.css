@@ -1,0 +1,196 @@
+/* =============== Theme Variables =============== */
+:root {
+  --bg-color: #f9faff;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --modal-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --input-bg: #ffffff;
+  --navbar-bg: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  --btn-logout-bg: #e74c3c;
+  --btn-logout-hover: #c0392b;
+  --link-color: #2575fc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e;
+  --modal-bg: #252525;
+  --border-color: #333;
+  --input-bg: #2a2a2a;
+  --navbar-bg: linear-gradient(90deg, #2c0a44, #1a3c7e);
+  --btn-logout-bg: #c0392b;
+  --btn-logout-hover: #a5281b;
+  --link-color: #6a9eff;
+}
+
+/* =============== Global =============== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* =============== Navbar =============== */
+.navbar {
+  background: var(--navbar-bg) !important;
+}
+
+.welcome-badge {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.btn-logout {
+  background: var(--btn-logout-bg);
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: var(--btn-logout-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* =============== Cards & Inputs =============== */
+.card,
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.form-control,
+.form-select,
+.form-control:focus {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #777;
+}
+
+a,
+.btn-link {
+  color: var(--link-color) !important;
+}
+
+/* =============== Posts =============== */
+.post-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.post-heading {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.post-description {
+  color: var(--text-color);
+  opacity: 0.9;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 8px 0;
+}
+
+.post-author {
+  font-weight: 600;
+}
+
+/* =============== Actions =============== */
+.like-btn {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.like-btn.liked {
+  color: #e74c3c;
+}
+
+.like-btn:not(.liked) {
+  color: #bbb;
+}
+
+.edit-btn,
+.delete-btn {
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-left: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: #17a2b8;
+  background: #e6f7fa;
+}
+
+[data-theme="dark"] .edit-btn {
+  background: #1a3d4a;
+  color: #66d9e8;
+}
+
+.delete-btn {
+  color: #dc3545;
+  background: #fde9eb;
+}
+
+[data-theme="dark"] .delete-btn {
+  background: #4a2328;
+  color: #f196a0;
+}
+
+/* =============== Alerts =============== */
+.alert {
+  border: none;
+}
+
+/* =============== Responsive =============== */
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+  }
+}
